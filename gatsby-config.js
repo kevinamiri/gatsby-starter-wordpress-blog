@@ -25,8 +25,16 @@ module.exports = {
        */
       resolve: `gatsby-source-wordpress`,
       options: {
+        auth: {
+          // "OAuth Authentication"
+          htaccess: {
+            username: 'test',
+            password: 'Hn0J S5Wv xIiQ yjXE 6EFe CGN4',
+          }
+        },
         // the only required plugin option for WordPress is the GraphQL url.
         url:
+          process.env.WPGRAPHQL_URL ||
           `https://translate.fzserver.com/graphql`,
       },
     },
